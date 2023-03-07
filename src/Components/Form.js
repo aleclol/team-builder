@@ -2,7 +2,7 @@ import React from 'react'
 import './Form.css'
 
 function Form (props) {
-const {member, onChange, handleSubmit} = props
+const {member, onChange, handleSubmit, buttonDisabled, errors} = props
 
 
 return (
@@ -18,6 +18,7 @@ return (
           value={member.name}
           />
         </label>
+        { errors.name.length > 0 && <p className="error">{errors.name}</p> }
         <br />
         <label>
           Email:&nbsp;
@@ -29,6 +30,7 @@ return (
           value={member.email}
           />
         </label>
+        { errors.email.length > 0 && <p className="error">{errors.email}</p> }
         <br />
         <label>
           Role:&nbsp;
@@ -37,15 +39,16 @@ return (
           onChange={onChange}
           value={member.role}>
             <option value="">--- Select a Role ---</option>
-            <option value="The Code Breaker">The Code Breaker</option>
+            <option value="The Code Breakerr">The Code Breaker</option>
             <option value="The Muscle">The Muscle</option>
             <option value="The Getaway Driver">The Getaway Driver</option>
             <option value="The Foil">The Foil</option>
             <option value="The Mastermind">The Mastermind</option>
           </select>
         </label>
+        { errors.role.length > 0 && <p className="error">{errors.role}</p> }
         <br />
-        <button>Submit</button>
+        <button disabled={buttonDisabled}>Submit</button>
       </form>
 
 )
