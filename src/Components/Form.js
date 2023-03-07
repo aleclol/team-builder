@@ -36,9 +36,11 @@ return (
           onChange={onChange}
           value={member.role}>
             <option value="">--- Select a Role ---</option>
-            <option value="Student">Student</option>
-            <option value="Instructor">Instructor</option>
-            <option value="Alumni">Alumni</option>
+            <option value="The Code Breaker">The Code Breaker</option>
+            <option value="The Muscle">The Muscle</option>
+            <option value="The Getaway Driver">The Getaway Driver</option>
+            <option value="The Foil">The Foil</option>
+            <option value="The Mastermind">The Mastermind</option>
           </select>
         </label>
         <br />

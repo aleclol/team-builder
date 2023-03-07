@@ -1,6 +1,14 @@
 body {
-  background: rgb(186, 186, 189);
+  background-image: url("./Assets/rm.jpg");
+  background-size: cover;
   font-size: 66.2%;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(127, 255, 229);
+  text-shadow: 1px 1px 3px rgb(117, 249, 51);
+  font-size: 3rem;
 }
 
 .kingClass {
@@ -12,6 +20,7 @@ body {
 
   color: aquamarine;
   background: gray;
+  box-shadow: 3px 3px 5px rgb(98, 98, 98);
   width: 500px;
   padding: 1rem;
   border: 1px solid rgb(60, 60, 60);
@@ -22,4 +31,6 @@ body {
 
 .container h2 {
   text-align: center;
+  border-bottom: solid 1px rgb(86, 86, 86);
+  padding-bottom: 10px;
 }
