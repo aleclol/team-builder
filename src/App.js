@@ -23,6 +23,11 @@ const handleSubmit = (evt) => {
   setMember({name: "", email: "", role: 0 })
 }
 
+const onEdit = (evt) => {
+  setMemberToEdit(evt.target.value)
+  console.log(evt)
+}
+
 return (
   <div>
     <h1>Heist Crew Assembler!</h1>
@@ -35,9 +40,9 @@ return (
         <h2>Crew Members</h2>
         {teamList.map((value, index) => {
           return (
-            <div>
-              <span key={index}>{value.name} {`(${value.email})`}, {value.role}, you son of a bitch 🤝 😜</span>
-              <button>edit</button>
+            <div key={index}>
+              <span>{value.name} {`(${value.email})`}, {value.role}, you son of a bitch 🤝 😜</span>
+              {/* <button onClick={onEdit}>edit</button> */}
             </div>
           )
         })}
