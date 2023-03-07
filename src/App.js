@@ -5,9 +5,9 @@ import './App.css'
 export default function App () {
   const [teamList, setTeamList] = useState([])
   const [member, setMember] = useState({
-    firstName: "Rick",
-    lastName: "Sanchez",
-    age: 67
+    name: "Rick Sanchez",
+    email: "pickle@rick.com",
+    role: 67
   })
 
 const onChange = (evt) => {
@@ -18,7 +18,7 @@ const onChange = (evt) => {
 const handleSubmit = (evt) => {
   evt.preventDefault()
   setTeamList([member, ...teamList])
-  setMember({firstName: "", lastName: "", age: 0 })
+  setMember({name: "", email: "", role: 0 })
 }
 
 return (
@@ -27,36 +27,38 @@ return (
       <h2>New Team Member</h2>
       <form onSubmit={event => handleSubmit(event)} value={member}>
         <label>
-          First Name:&nbsp;
+          Name:&nbsp;
           <input 
-          placeholder='First Name'
+          placeholder='enter full name here'
           type="text"
-          name="firstName"
+          name="name"
           onChange={onChange}
-          value={member.firstName}
+          value={member.name}
           />
         </label>
         <br />
         <label>
-          Last Name:&nbsp;
+          Email:&nbsp;
           <input 
-          placeholder='Last Name'
-          type="text"
-          name="lastName"
+          placeholder='enter email here'
+          type="email"
+          name="email"
           onChange={onChange}
-          value={member.lastName}
+          value={member.email}
           />
         </label>
         <br />
         <label>
-          Age:&nbsp;
-          <input 
-          placeholder='Age'
-          type="number"
-          name="age"
+          Role:&nbsp;
+          <select 
+          name="role"
           onChange={onChange}
-          value={member.age}
-          />
+          value={member.role}>
+            <option value="">--- Select a Role ---</option>
+            <option value="Student">Student</option>
+            <option value="Instructor">Instructor</option>
+            <option value="Alumni">Alumni</option>
+          </select>
         </label>
         <br />
         <button>Submit</button>
@@ -65,7 +67,7 @@ return (
     <div className="container">
       <h2>Team Members</h2>
       {teamList.map((value, index) => {
-        return <div key={index}>{value.firstName} {value.lastName}, {value.age}</div>
+        return <div key={index}>{value.name} {value.email}, {value.role}</div>
       })}
     </div>
   </div>
